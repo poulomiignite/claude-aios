@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The AI OS Workshop — Build Your Business Operating System</title>
-<meta name="description" content="The AI OS Workshop — Learn how to build a business operating system with Claude AI. Build workflows, train your AI on your business, and automate tasks in a live hands-on session.">
-<meta property="og:title" content="The AI OS Workshop — Build Your Business Operating System">
-<meta property="og:description" content="A live hands-on workshop for service business owners who want to use Claude AI as a real operating system — not just a chatbot.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The AI OS Workshop">
-<meta name="twitter:description" content="Build your AI OS — train Claude on your business, build workflows, and automate your work.">
 <link href="https://fonts.bunny.net/css?family=outfit:400,500,600,700&family=open-sans:300,400,500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -656,10 +649,103 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     CAPABILITIES (moved up)
+     THE ENGINE
+══════════════════════════════════════════ -->
+<section class="slide" id="engine">
+  <div class="eyebrow">02 — What is an AI OS?</div>
+  <h2 class="section-hl">Six layers that turn AI<br>into <em>business infrastructure</em></h2>
+  <p class="section-sub">A local installation of Claude that lives on your computer. Connected to your files, your tools, and your business APIs. A centralized brain that searches, executes, and automates.</p>
+
+  <div class="pentagon-wrap">
+    <svg class="pentagon-svg" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="pentGlow" cx="50%" cy="50%" r="40%">
+          <stop offset="0%" stop-color="#DA3FF6" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#DA3FF6" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="pentLine">
+          <feGaussianBlur stdDeviation="2" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Ambient glow -->
+      <circle cx="350" cy="340" r="200" fill="url(#pentGlow)"/>
+
+      <!-- Hexagon outline -->
+      <polygon points="350,100 560,220 560,460 350,580 140,460 140,220"
+        fill="none" stroke="#DA3FF6" stroke-width="2" opacity="0.25"/>
+
+      <!-- Spoke lines from center (350,340) to each point -->
+      <line x1="350" y1="340" x2="350" y2="100" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <line x1="350" y1="340" x2="560" y2="220" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <line x1="350" y1="340" x2="560" y2="460" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <line x1="350" y1="340" x2="350" y2="580" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <line x1="350" y1="340" x2="140" y2="460" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <line x1="350" y1="340" x2="140" y2="220" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
+      <!-- Crisp duplicates -->
+      <line x1="350" y1="340" x2="350" y2="100" stroke="#DA3FF6" stroke-width="2"/>
+      <line x1="350" y1="340" x2="560" y2="220" stroke="#DA3FF6" stroke-width="2"/>
+      <line x1="350" y1="340" x2="560" y2="460" stroke="#DA3FF6" stroke-width="2"/>
+      <line x1="350" y1="340" x2="350" y2="580" stroke="#DA3FF6" stroke-width="2"/>
+      <line x1="350" y1="340" x2="140" y2="460" stroke="#DA3FF6" stroke-width="2"/>
+      <line x1="350" y1="340" x2="140" y2="220" stroke="#DA3FF6" stroke-width="2"/>
+
+      <!-- Center circle -->
+      <circle cx="350" cy="340" r="60" fill="#08070F" stroke="#DA3FF6" stroke-width="3"/>
+      <text x="350" y="332" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="24" font-weight="700">Claude</text>
+      <text x="350" y="358" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="24" font-weight="700">OS</text>
+
+      <!-- Node 1: Boss (top) -->
+      <circle cx="350" cy="78" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
+      <text x="350" y="74" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">01</text>
+      <text x="350" y="88" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">BOSS</text>
+      <text x="350" y="38" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Boss</text>
+      <text x="350" y="56" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Rules, commands, guardrails</text>
+
+      <!-- Node 2: Information (top-right) -->
+      <circle cx="582" cy="220" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
+      <text x="582" y="216" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">02</text>
+      <text x="582" y="230" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">INFO</text>
+      <text x="582" y="268" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Information</text>
+      <text x="582" y="286" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Context, memory, brand voice</text>
+
+      <!-- Node 3: Team (bottom-right) -->
+      <circle cx="582" cy="460" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
+      <text x="582" y="456" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">03</text>
+      <text x="582" y="470" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">TEAM</text>
+      <text x="582" y="508" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Team</text>
+      <text x="582" y="526" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Skills and agents</text>
+
+      <!-- Node 4: Connectors (bottom) -->
+      <circle cx="350" cy="602" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
+      <text x="350" y="598" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">04</text>
+      <text x="350" y="612" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">LINK</text>
+      <text x="350" y="648" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Connectors</text>
+      <text x="350" y="666" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Tools via MCPs</text>
+
+      <!-- Node 5: Automation (bottom-left) -->
+      <circle cx="118" cy="460" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
+      <text x="118" y="456" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">05</text>
+      <text x="118" y="470" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">AUTO</text>
+      <text x="118" y="508" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Automation</text>
+      <text x="118" y="526" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Scheduled workflows</text>
+
+      <!-- Node 6: Distribution (top-left) — optional -->
+      <circle cx="118" cy="220" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.15)" stroke-width="2" stroke-dasharray="4 3"/>
+      <text x="118" y="216" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">06</text>
+      <text x="118" y="230" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em" opacity="0.6">OPT</text>
+      <text x="118" y="183" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700" opacity="0.7">Distribution</text>
+      <text x="118" y="201" text-anchor="middle" fill="rgba(244,240,255,0.4)" font-family="Open Sans,sans-serif" font-size="12">Share workflows with your team</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CAPABILITIES
 ══════════════════════════════════════════ -->
 <section class="slide" id="caps" style="min-height:auto;">
-  <div class="eyebrow">02 — Capabilities</div>
+  <div class="eyebrow">03 — Capabilities</div>
   <h2 class="section-hl">Where can you use<br><em>an AI OS like Claude?</em></h2>
   <p class="section-sub">Six systems. Mapped to how you actually operate.</p>
 
@@ -757,7 +843,7 @@
      EXAMPLE WORKFLOWS
 ══════════════════════════════════════════ -->
 <section class="slide" id="workflows" style="min-height:auto;">
-  <div class="eyebrow">03 — Example Workflows</div>
+  <div class="eyebrow">04 — Example Workflows</div>
   <h2 class="section-hl">One command.<br><em>End-to-end execution.</em></h2>
   <p class="section-sub">Manages your calendar, files, inbox, and your business. Produces on-brand operational assets in minutes. Works when you're busy doing human work.</p>
 
@@ -981,100 +1067,6 @@
         <div class="workflow-node-title">Live quiz on your website</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     THE ENGINE
-══════════════════════════════════════════ -->
-<section class="slide" id="engine">
-  <div class="eyebrow">04 — What is an AI OS?</div>
-  <h2 class="section-hl">Six layers that turn AI<br>into <em>business infrastructure</em></h2>
-  <p class="section-sub">A local installation of Claude that lives on your computer. Connected to your files, your tools, and your business APIs. A centralized brain that searches, executes, and automates.</p>
-
-  <div class="pentagon-wrap">
-    <svg class="pentagon-svg" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="pentGlow" cx="50%" cy="50%" r="40%">
-          <stop offset="0%" stop-color="#DA3FF6" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#DA3FF6" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="pentLine">
-          <feGaussianBlur stdDeviation="2" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-
-      <!-- Ambient glow -->
-      <circle cx="350" cy="340" r="200" fill="url(#pentGlow)"/>
-
-      <!-- Hexagon outline -->
-      <!-- Points: Top(350,100) TopRight(560,220) BotRight(560,460) Bottom(350,580) BotLeft(140,460) TopLeft(140,220) -->
-      <polygon points="350,100 560,220 560,460 350,580 140,460 140,220"
-        fill="none" stroke="#DA3FF6" stroke-width="2" opacity="0.25"/>
-
-      <!-- Spoke lines from center (350,340) to each point -->
-      <line x1="350" y1="340" x2="350" y2="100" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <line x1="350" y1="340" x2="560" y2="220" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <line x1="350" y1="340" x2="560" y2="460" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <line x1="350" y1="340" x2="350" y2="580" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <line x1="350" y1="340" x2="140" y2="460" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <line x1="350" y1="340" x2="140" y2="220" stroke="#DA3FF6" stroke-width="2.5" filter="url(#pentLine)"/>
-      <!-- Crisp duplicates -->
-      <line x1="350" y1="340" x2="350" y2="100" stroke="#DA3FF6" stroke-width="2"/>
-      <line x1="350" y1="340" x2="560" y2="220" stroke="#DA3FF6" stroke-width="2"/>
-      <line x1="350" y1="340" x2="560" y2="460" stroke="#DA3FF6" stroke-width="2"/>
-      <line x1="350" y1="340" x2="350" y2="580" stroke="#DA3FF6" stroke-width="2"/>
-      <line x1="350" y1="340" x2="140" y2="460" stroke="#DA3FF6" stroke-width="2"/>
-      <line x1="350" y1="340" x2="140" y2="220" stroke="#DA3FF6" stroke-width="2"/>
-
-      <!-- Center circle -->
-      <circle cx="350" cy="340" r="60" fill="#08070F" stroke="#DA3FF6" stroke-width="3"/>
-      <text x="350" y="332" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="24" font-weight="700">Claude</text>
-      <text x="350" y="358" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="24" font-weight="700">OS</text>
-
-      <!-- Node 1: Boss (top) -->
-      <circle cx="350" cy="78" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
-      <text x="350" y="74" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">01</text>
-      <text x="350" y="88" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">BOSS</text>
-      <text x="350" y="38" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Boss</text>
-      <text x="350" y="56" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Rules, commands, guardrails</text>
-
-      <!-- Node 2: Information (top-right) -->
-      <circle cx="582" cy="220" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
-      <text x="582" y="216" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">02</text>
-      <text x="582" y="230" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">INFO</text>
-      <text x="582" y="268" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Information</text>
-      <text x="582" y="286" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Context, memory, brand voice</text>
-
-      <!-- Node 3: Team (bottom-right) -->
-      <circle cx="582" cy="460" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
-      <text x="582" y="456" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">03</text>
-      <text x="582" y="470" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">TEAM</text>
-      <text x="582" y="508" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Team</text>
-      <text x="582" y="526" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Skills and agents</text>
-
-      <!-- Node 4: Connectors (bottom) -->
-      <circle cx="350" cy="602" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
-      <text x="350" y="598" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">04</text>
-      <text x="350" y="612" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">LINK</text>
-      <text x="350" y="648" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Connectors</text>
-      <text x="350" y="666" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Tools via MCPs</text>
-
-      <!-- Node 5: Automation (bottom-left) -->
-      <circle cx="118" cy="460" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.25)" stroke-width="2"/>
-      <text x="118" y="456" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">05</text>
-      <text x="118" y="470" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em">AUTO</text>
-      <text x="118" y="508" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700">Automation</text>
-      <text x="118" y="526" text-anchor="middle" fill="rgba(244,240,255,0.5)" font-family="Open Sans,sans-serif" font-size="12">Scheduled workflows</text>
-
-      <!-- Node 6: Distribution (top-left) — optional -->
-      <circle cx="118" cy="220" r="28" fill="#0F0D1A" stroke="rgba(244,240,255,0.15)" stroke-width="2" stroke-dasharray="4 3"/>
-      <text x="118" y="216" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="14" font-weight="700">06</text>
-      <text x="118" y="230" text-anchor="middle" fill="var(--fuchsia)" font-family="Outfit,sans-serif" font-size="9" font-weight="600" letter-spacing="0.05em" opacity="0.6">OPT</text>
-      <text x="118" y="183" text-anchor="middle" fill="white" font-family="Outfit,sans-serif" font-size="18" font-weight="700" opacity="0.7">Distribution</text>
-      <text x="118" y="201" text-anchor="middle" fill="rgba(244,240,255,0.4)" font-family="Open Sans,sans-serif" font-size="12">Share workflows with your team</text>
-    </svg>
   </div>
 </section>
 
